@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { User} from "../user";
+import { User } from '../user';
 
 @Component({
   selector: 'app-01_form',
@@ -7,7 +7,7 @@ import { User} from "../user";
   styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent {
-  roles: string[] = ["Guest", "Moderator", "Administrator"];
+  roles: string[] = ['Guest', 'Moderator', 'Administrator'];
 
   model: User = new User(0,'','', 0);
 
