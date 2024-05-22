@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { UserFormComponent } from "./sample02-forms/01_form/user-form.component";
 import { FormsModule } from "@angular/forms";
 import { RouterLink, RouterModule, Routes } from "@angular/router";
-import { StylesSampleComponent } from './styles-sample/styles-sample.component';
+import { StylesSampleComponent } from "./sample02-forms/02_styles-sample/styles-sample.component";
 
 const appRoutes: Routes = [
   { path: '01_form', component: UserFormComponent},
