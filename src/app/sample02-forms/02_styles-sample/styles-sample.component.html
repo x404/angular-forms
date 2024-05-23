@@ -1,0 +1,23 @@
+<div class="container">
+  <input type="text" [(ngModel)]="data" #myinput required>
+  <p>Styles of input element: <b>{{myinput.className}}</b></p>
+  <p></p>
+
+  <ul>
+    <li>
+      ng-untouched =>  ng-touched - з полем не було взаємодії <br>
+      ng-touched - з полем була взаємодія
+    </li>
+    <li>
+      ng-pristine => ng-dirty - можна зрозуміти в яких полях юзер змінив стан інпута
+      <br>
+      <!--      ng-invalid-->
+    </li>
+    <li>
+      ng-  valid => ng-invalid -
+      <br>
+      <!--      ng-invalid-->
+    </li>
+
+  </ul>
+</div>
