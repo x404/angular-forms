@@ -11,6 +11,9 @@ import { UserFormComponent4 } from "./sample02-forms/04_form_error_msg/user-form
 import { FormFewErrorsComponent } from "./sample02-forms/04_form_few_errors/form-errors.component";
 import { FormControlComponent } from './sample03-reactiveForms/01_form-control/form-control.component';
 import { ReactiveFormsSampleModule } from "./sample03-reactiveForms";
+import {
+  FormControlValidationComponent
+} from "./sample03-reactiveForms/02_form-control_validation/form-control-validation.component";
 
 const appRoutes: Routes = [
   { path: '01_form', component: UserFormComponent},
@@ -20,6 +23,7 @@ const appRoutes: Routes = [
   { path: '05_form_few_errors', component: FormFewErrorsComponent},
 
   { path: '01_form-control', component: FormControlComponent},
+  { path: '02_form-control-validation', component: FormControlValidationComponent},
 ]
 
 @NgModule({

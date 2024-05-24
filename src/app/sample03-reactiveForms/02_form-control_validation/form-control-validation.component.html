@@ -1,5 +1,5 @@
 <div class="container">
-  <h3>Reactive Form</h3>
+  <h3>Reactive Form Validation</h3>
   <form
         novalidate
         [formGroup]="loginForm"
@@ -12,15 +12,29 @@
         class="form-control mt-1"
              id="login"
              formControlName="login"
+             required
       >
+
+      <div *ngIf="loginForm.get('login')?.hasError('required') &&
+                  loginForm.get('login')?.touched
+          "
+           class="alert alert-danger mt-1"
+      >Field is required</div>
     </div>
     <div class="form-group mt-2">
       <label for="password">Password</label>
       <input type="password"
+             required
              class="form-control mt-1"
              id="password"
              formControlName="password"
       >
+
+      <div *ngIf="loginForm.get('password')?.hasError('minlength') &&
+                  loginForm.get('password')?.touched
+          "
+           class="alert alert-danger mt-1"
+      >Password length must be less 3 symbols</div>
     </div>
     <input
       type="submit"
