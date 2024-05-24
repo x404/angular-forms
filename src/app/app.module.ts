@@ -7,11 +7,13 @@ import { FormsModule } from "@angular/forms";
 import { RouterLink, RouterModule, Routes } from "@angular/router";
 import { StylesSampleComponent } from "./sample02-forms/02_styles-sample/styles-sample.component";
 import { UserFormComponent3 } from "./sample02-forms/03_form-custom-css/user-form.component2";
+import { UserFormComponent4 } from "./sample02-forms/04_form_error_msg/user-form.component3";
 
 const appRoutes: Routes = [
   { path: '01_form', component: UserFormComponent},
   { path: '02_styles', component: StylesSampleComponent},
   { path: '03_form_styles', component: UserFormComponent3},
+  { path: '04_form_error_msg', component: UserFormComponent4},
 ]
 
 @NgModule({
@@ -19,6 +21,7 @@ const appRoutes: Routes = [
     AppComponent,
     UserFormComponent,
     UserFormComponent3,
+    UserFormComponent4,
     StylesSampleComponent
   ],
   imports: [
