@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './form-builder.component.html',
   styleUrls: ['./form-builder.component.css']
 })
-export class FormBuilderComponent implements OnInit{
+export class FormBuilderComponent{
 
   loginForm: FormGroup;
   constructor(
@@ -16,10 +16,6 @@ export class FormBuilderComponent implements OnInit{
       login: ['user1', Validators.required],
       password: ['', [Validators.required, Validators.minLength(7)]]
     })
-  }
-
-  ngOnInit() {
-
   }
 
 
