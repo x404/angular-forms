@@ -9,6 +9,8 @@ import { StylesSampleComponent } from "./sample02-forms/02_styles-sample/styles-
 import { UserFormComponent3 } from "./sample02-forms/03_form-custom-css/user-form.component2";
 import { UserFormComponent4 } from "./sample02-forms/04_form_error_msg/user-form.component3";
 import { FormFewErrorsComponent } from "./sample02-forms/04_form_few_errors/form-errors.component";
+import { FormControlComponent } from './sample03-reactiveForms/01_form-control/form-control.component';
+import { ReactiveFormsSampleModule } from "./sample03-reactiveForms";
 
 const appRoutes: Routes = [
   { path: '01_form', component: UserFormComponent},
@@ -16,6 +18,8 @@ const appRoutes: Routes = [
   { path: '03_form_styles', component: UserFormComponent3},
   { path: '04_form_error_msg', component: UserFormComponent4},
   { path: '05_form_few_errors', component: FormFewErrorsComponent},
+
+  { path: '01_form-control', component: FormControlComponent},
 ]
 
 @NgModule({
@@ -30,6 +34,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsSampleModule,
     RouterLink,
     RouterModule.forRoot(appRoutes),
   ],

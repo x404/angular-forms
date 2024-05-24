@@ -1,0 +1,34 @@
+<div class="container">
+  <h3>Reactive Form</h3>
+  <form
+        novalidate
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmit(loginForm)"
+        class="mt-2"
+  >
+    <div class="form-group">
+      <label for="login">Login</label>
+      <input type="text"
+        class="form-control mt-1"
+             id="login"
+             formControlName="login"
+             required
+      >
+    </div>
+    <div class="form-group mt-2">
+      <label for="password">Password</label>
+      <input type="password"
+             required
+             class="form-control mt-1"
+             id="password"
+             formControlName="password"
+      >
+    </div>
+    <input
+      type="submit"
+      class="btn btn-primary mt-2"
+      value="Login"
+      [disabled]="loginForm.invalid"
+    >
+  </form>
+</div>
