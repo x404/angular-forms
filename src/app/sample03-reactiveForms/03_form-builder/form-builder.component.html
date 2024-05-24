@@ -1,0 +1,44 @@
+<div class="container">
+  <h3>Reactive Form Validation</h3>
+  <form
+    novalidate
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit(loginForm)"
+    class="mt-2"
+  >
+    <div class="form-group">
+      <label for="login">Login</label>
+      <input type="text"
+             class="form-control mt-1"
+             id="login"
+             formControlName="login"
+      >
+
+      <div *ngIf="loginForm.get('login')?.hasError('required') &&
+                  loginForm.get('login')?.touched
+          "
+           class="alert alert-danger mt-1"
+      >Field is required</div>
+    </div>
+    <div class="form-group mt-2">
+      <label for="password">Password</label>
+      <input type="password"
+             class="form-control mt-1"
+             id="password"
+             formControlName="password"
+      >
+
+      <div *ngIf="loginForm.get('password')?.hasError('minlength') &&
+                  loginForm.get('password')?.touched
+          "
+           class="alert alert-danger mt-1"
+      >Password length must be less 3 symbols</div>
+    </div>
+    <input
+      type="submit"
+      class="btn btn-primary mt-2"
+      value="Login"
+      [disabled]="loginForm.invalid"
+    >
+  </form>
+</div>

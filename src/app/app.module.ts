@@ -14,6 +14,7 @@ import { ReactiveFormsSampleModule } from "./sample03-reactiveForms";
 import {
   FormControlValidationComponent
 } from "./sample03-reactiveForms/02_form-control_validation/form-control-validation.component";
+import { FormBuilderComponent } from "./sample03-reactiveForms/03_form-builder/form-builder.component";
 
 const appRoutes: Routes = [
   { path: '01_form', component: UserFormComponent},
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
 
   { path: '01_form-control', component: FormControlComponent},
   { path: '02_form-control-validation', component: FormControlValidationComponent},
+  { path: '03_form-builder', component: FormBuilderComponent},
 ]
 
 @NgModule({
