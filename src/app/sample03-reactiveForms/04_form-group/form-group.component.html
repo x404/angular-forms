@@ -38,25 +38,29 @@
     <div formGroupName="address">
       <h4 class="mt-3">Address</h4>
       <div class="form-group mt-2">
-        <label for="city">City</label>
+        <label for="country">Country</label>
 
-        <select name="city" id="city"
+        <select name="country" id="country"
                 class="form-control"
-                formControlName="city"
+                formControlName="country"
+                (change)="setCapital()"
         >
           <option value="de">Germany</option>
           <option value="ua">Ukraine</option>
+          <option value="ch">Prague</option>
         </select>
       </div>
 
       <div class="form-group mt-2">
-        <label for="state">State</label>
+        <label for="capital">Capital</label>
         <input type="text"
                class="form-control mt-1"
-               id="state"
-               formControlName="state"
+               id="capital"
+               formControlName="capital"
         >
       </div>
+
+      <button (click)="setCapital()" type="button">Set capital</button>
     </div>
 
 

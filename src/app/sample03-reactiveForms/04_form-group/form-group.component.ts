@@ -12,14 +12,26 @@ export class FormGroupComponent {
     login: new FormControl('user1', Validators.required),
     password: new FormControl('', [Validators.required, Validators.minLength(3)]),
     address: new FormGroup({
-      city: new FormControl('ua'),
-      state: new FormControl('')
+      country: new FormControl('ua'),
+      capital: new FormControl('')
     })
   });
-  constructor(
-  ) {
-  }
 
+
+  setCapital(){
+    const cityMap: { [countryCode: string]: string}  = {
+      ua: 'Kyev',
+      de: 'Berlin',
+      ch: 'Prague'
+    }
+
+    const cityKey = this.loginForm.get('address')?.get('country')?.value;
+    const city = cityMap[cityKey];
+
+    this.loginForm.patchValue({
+      address: {capital: city}
+    })
+  }
 
   onSubmit(form: FormGroup) {
     console.log(this.loginForm.value);
