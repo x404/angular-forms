@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-03_form-builder',
@@ -14,7 +14,8 @@ export class FormGroupComponent {
     address: new FormGroup({
       country: new FormControl('ua'),
       capital: new FormControl('')
-    })
+    }),
+    skills: new FormArray([])
   });
 
 
@@ -35,6 +36,16 @@ export class FormGroupComponent {
 
   onSubmit(form: FormGroup) {
     console.log(this.loginForm.value);
+    this.loginForm.reset()
   }
 
+  addSkill() {
+    const control = new FormControl('', Validators.required);
+    // (this.loginForm.get('skills') as FormArray).push('skills');
+    (<FormArray>this.loginForm.get('skills')).push(control);
+  }
+
+  getSkillsControls() {
+    return (this.loginForm.get('skills') as FormArray).controls
+  }
 }

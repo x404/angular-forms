@@ -64,6 +64,24 @@
     </div>
 
 
+    <div class="card mt-3 p-2" formGroupName="skills">
+      <h4 class="mt-3">Skills</h4>
+
+      <div
+        class="form-control my-1"
+        *ngFor="let control of getSkillsControls(); let idx = index"
+      >
+        <label>Skill {{idx + 1}}</label>
+        <input type="text"
+               class="form-control"
+               [formControlName]="idx"
+        >
+      </div>
+
+      <button type="button" class="mt-3 btn btn-primary"
+              (click)="addSkill()"
+      >Add skill</button>
+    </div>
 
     <input
       type="submit"
